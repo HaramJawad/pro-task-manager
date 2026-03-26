@@ -1,0 +1,181 @@
+.completed-page {
+    color: #f0eff5;
+    padding: 20px;
+    animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.completed-header
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.completed-page  .completed-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.4rem;
+}
+
+.completed-page  .completed-header .stats-subtext {
+    color: #8b8a9b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Stats Card */
+.completed-page  .stats-card {
+    background: #16161a;
+    border: 1px solid #2a2a35;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.completed-page  .stats-card  .stats-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stats-info .stats-label {
+    color: #8b8a9b;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-info .stats-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2dd4bf; /* Teal color from image */
+    text-shadow: 0 0 20px rgba(45, 212, 191, 0.2);
+}
+
+/* Progress Bar */
+.stats-card  .progress-bar-container {
+    height: 8px;
+    background: #2a2a35;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.stats-card  .progress-bar-container .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2dd4bf, #059669);
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.3);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stats-card .stats-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+.completed-list .noTasksMessage 
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 2000px;
+    margin-right:  auto;
+    margin-left: auto;
+}
+.completed-list .noTasksMessage p
+{
+    font-size: 1rem;
+} 
+/* Completed Item Card */
+.completed-item-card {
+    background: rgba(22, 22, 26, 0.5);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap:1rem;
+    transition: all 0.2s ease;
+}
+.completed-item-card:hover {
+    border-color: #2dd4bf66;
+    background: #1c1c21;
+    transform: translateX(5px);
+}
+.completed-item-card  .item-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.completed-item-card  .custom-checkbox.checked {
+    width: 22px;
+    height: 22px;
+    background: #2dd4bf;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 12px;
+    box-shadow: 0 4px 10px rgba(45, 212, 191, 0.3);
+}
+
+.completed-item-card .item-info .completed-title {
+    text-decoration: line-through;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.completed-item-card .item-info .item-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+ .item-info .item-tags .tag-category {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background: rgba(45, 212, 191, 0.1);
+    color: #2dd4bf;
+    border-radius: 4px;
+}
+
+.item-info .item-tags .tag-priority {
+    font-size: 0.75rem;
+    color: #fb923c;
+}
+
+/* Undo Button */
+.completed-item-card .undo-btn {
+    background: transparent;
+    border: 1px solid #2a2a35;
+    color: #8b8a9b;
+    padding: 6px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.completed-item-card .undo-btn:hover {
+    border-color: #f87171;
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.05);
+}
+@media (min-width: 768px) {
+    .completed-page {
+padding: 20px 50px;
+max-width: 1000px;
+margin: 0 auto;
+    }
+  }

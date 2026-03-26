@@ -1,0 +1,106 @@
+form {
+  border: 1px solid #2a2a35;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background-color: #16161a;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+form h4 {
+  color: #f0eff5;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+  font-size: 1.2rem;
+}
+
+form input,
+form select,
+form textarea {
+  background-color: #0e0e11;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #2a2a35;
+  transition: all 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #7c6af7;
+  background-color: #121217;
+}
+
+form .deadline,form input , form .description,
+form select {
+  color: #f0eff5
+}
+
+form input[type="text"],
+form .category,
+form .description {
+  display: block;
+  width: 100%;
+  margin: 1rem 0rem 0.8rem 0rem;
+}
+
+form .form-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+form .form-row .formInput {
+  flex: 1;
+
+}
+form .form-actions 
+{
+  display:flex;
+  flex-wrap: wrap;
+  gap:0.5rem;
+}
+form button[type="submit"] {
+  background: linear-gradient(135deg, #7c6af7, #6350e0);
+  border: none;
+  color: #f0eff5;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(124, 106, 247, 0.4);
+}
+form .cancel-button {
+  background-color: transparent;
+  border: 1px solid #2a2a35;
+  color: #8b8a9b;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+form .cancel-button:hover {
+  background-color: #2a2a35;
+  color: #f0eff5;
+}
+form button {
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+  border-radius: 0.8rem;
+  cursor: pointer
+}
+.error-message {
+  color: #f87171;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  background: rgba(248, 113, 113, 0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #f87171;
+}

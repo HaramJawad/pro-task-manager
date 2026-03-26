@@ -1,0 +1,13 @@
+.main-content {
+   
+    width: 100%;
+    min-height: 100vh; /* Allow it to be at least full screen */
+ 
+}
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: 240px; /* This pushes the page content to the right of the sidebar */
+        width: calc(100% - 240px);
+ 
+    }
+}

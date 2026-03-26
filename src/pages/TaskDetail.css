@@ -1,0 +1,240 @@
+.taskDetailsContainer 
+{
+    width:100%;
+    padding:20px;
+}
+.backToTasksPage 
+{
+   color: #8b8a9b;
+   cursor:pointer;
+ 
+}
+.backToTasksPage:hover 
+{
+    color:#82818f;
+}
+.task-detail-card 
+{
+    background-color: #16161a;
+    border: 1px solid #2a2a35;
+    padding:1rem;
+    margin-top: 2rem;
+    border-radius:1rem;
+    width:100%;
+}
+.task-status-controls 
+{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.task-completion-status 
+{
+    padding:0.3rem 1rem 0.3rem 1rem;
+    border-radius:2rem;
+    font-size: 0.9rem;
+}
+.status-inprogress.task-completion-status
+{
+    color: #fb923c;
+    background-color: rgba(251, 146, 60, 0.12);
+    border:1px solid #fb923c;
+}
+.status-completed.task-completion-status 
+{
+    color: #34d399;
+    background: rgba(52, 211, 153, 0.12);
+    border:1px solid #34d399;
+}
+.task-important-status 
+{
+    background-color:#16161a ;
+    border: none;
+    font-size: 1.5rem;
+    color:#4e4d5e;
+}
+.task-detail-card .taskTitle 
+{
+    color:#f0eff5 ;
+    margin:0.6rem 0rem 0.6rem 0rem;
+}
+.task-detail-card .task-information 
+{
+    display:flex;
+    gap:0.8rem;
+    align-items:center;
+}
+.task-detail-card .task-information .task-category , 
+.task-detail-card .task-information .task-priority, 
+.task-detail-card .task-information .task-dueDate 
+{
+    padding:0.3rem 1rem 0.3rem 1rem;
+    border-radius: 1rem;
+    font-size:0.9rem;
+}
+.work.task-category    { background: rgba(96,165,250,0.12);   color: #60a5fa; }
+.personal.task-category    { background: rgba(192,132,252,0.12);  color: #c084fc; }
+.study.task-category    { background: rgba(52,211,153,0.12);   color: #34d399; }
+.health.task-category  { background: rgba(251,146,60,0.12);   color: #fb923c; }
+.shopping.task-category    { background: rgba(244,114,182,0.12);  color: #f472b6; }
+.home.task-category      { background: rgba(34,211,238,0.12);   color: #22d3ee; }
+.finance.task-category   { background: rgba(163,230,53,0.12);   color: #a3e635; }
+.other.task-category    { background: rgba(148,163,184,0.12);  color: #94a3b8; }
+.all.task-category  { background: rgba(240,239,245,0.12);  color: #f0eff5; }
+.default  { background: rgba(148,163,184,0.12);  color: #94a3b8; }
+
+.low.task-priority 
+{
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border:1px solid #34d399;
+}
+.medium.task-priority 
+{
+  color: #fb923c;
+  background-color: rgba(251, 146, 60, 0.12);
+  border:1px solid #fb923c;
+}
+.high.task-priority 
+{
+  color: #f87171;
+  background-color: rgba(248, 113, 113, 0.12);
+  border:1px solid #f87171;
+}
+.task-detail-card .task-information .task-dueDate 
+{
+    color:#8b8a9b;
+    font-size: 0.9rem;
+    border:1px solid #2a2a35 ;
+}
+.task-description-container 
+{
+    border:1px solid #2a2a35 ;
+    padding:1rem;
+    margin: 1rem 0;
+    border-radius: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    background-color: #0e0e11;
+}
+.task-description-container  h5
+{
+    color:#4e4d5e;
+}
+.task-description-container span 
+{
+    color:#8b8a9b 
+}
+.task-detail-card  .creationDate 
+{
+    color:#4e4d5e;
+    font-size: 0.8rem;
+}
+.task-detail-card .task-actions 
+{
+    display: flex;
+    gap: 1rem;
+}
+.task-detail-card .task-actions button{
+border: none;
+padding:0.7rem 1rem 0.7rem 1rem;
+border-radius: 0.5rem;
+margin-top: 1.3rem;
+font-weight: bold;
+}
+.task-detail-card .task-actions .edit-btn 
+{
+   background-color: #6a58e6;
+   color:#f0eff5
+}
+.task-detail-card .task-actions .delete-btn 
+{
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.12);
+    border:1px solid #f87171;
+}
+.edit-panel {
+    border: 1px solid #2a2a35;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    background-color: #16161a;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .edit-panel h4 {
+    color: #f0eff5;
+    font-weight: bold;
+  }
+  
+  .edit-panel  input,
+  .edit-panel  select,
+  .edit-panel  textarea {
+    background-color: #0e0e11;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #2a2a35;
+  }
+  
+  .edit-panel  input:focus,
+  .edit-panel  select:focus,
+  .edit-panel  textarea:focus {
+    outline: none;
+    border-color: #7c6af7
+  }
+  
+  .edit-panel  .deadline,.edit-panel  input , .edit-panel  .description,
+  .edit-panel select {
+    color: #f0eff5
+  }
+  
+  .edit-panel  input[type="text"],
+  .edit-panel .category,
+  .edit-panel  .description {
+    display: block;
+    width: 100%;
+    margin: 1rem 0rem 0.8rem 0rem;
+  }
+  
+  .edit-panel  .form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .edit-panel  .form-row .formInput {
+    flex: 1;
+  }
+  
+  .edit-panel .saveChanges-btn{
+    background: linear-gradient(135deg, #7c6af7, #967de0);
+    border: none;
+    color: #f0eff5;
+    font-weight: bold;
+    margin-right: 0.8rem
+  }
+  
+  .edit-panel .cancel-button {
+    background-color: #16161a;
+    color: #8b8a9b;
+    font-weight: bold;
+  }
+  
+  .edit-panel button {
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer
+  }
+@media (min-width: 768px) {
+    .taskDetailsContainer
+    {
+        padding:20px 50px;
+    }
+    .task-detail-card , .edit-panel
+    {
+        max-width: 900px;
+    }
+}

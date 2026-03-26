@@ -1,0 +1,14 @@
+.layout-container {
+display: flex;
+flex-direction: column;
+    min-height: 100vh; 
+
+}
+
+.content-area {
+    flex: 1; /* Khali jagah cover karega */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Pages ko center karne ke liye */
+  
+}

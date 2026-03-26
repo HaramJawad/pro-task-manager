@@ -1,0 +1,34 @@
+.progress-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .progress-bar-circle {
+    transition: stroke-dashoffset 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    filter: drop-shadow(0 0 5px rgba(106, 88, 230, 0.5));
+  }
+  
+  .progress-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .percent-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #6a58e6 ;
+    text-shadow: 0 0 15px rgba(106, 88, 230, 0.3);
+  }
+  
+  .done-label {
+    font-size: 0.7rem;
+    color: #8b8a9b;
+    letter-spacing: 1px;
+  }

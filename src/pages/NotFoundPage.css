@@ -1,0 +1,28 @@
+.notFoundPageContainer 
+{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    padding: 50px;
+    color: #f0eff5;
+    width:100%;
+    gap:0.5rem;
+}
+.notFoundPageContainer h1 
+{
+    font-size: 4rem;
+    color: #7c6af7;
+}
+.notFoundPageContainer Link 
+{
+    color: #a78bfa;
+     text-decoration: underline ;
+}
+@media (min-width:768px)
+{
+    .notFoundPageContainer 
+    {
+        max-width: 1000px;
+    }
+}

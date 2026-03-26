@@ -1,0 +1,219 @@
+.show-task-list {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #16161a;
+  border: 1px solid #2a2a35;
+  padding: 1rem;
+  border-radius: 1rem
+}
+
+.show-task-list:hover {
+  transform: translateX(5px);
+  border-color: #7c6af7;
+  background-color: #1c1c21;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.taskListContainer,
+.taskListInformationContainer,
+.task-informations,
+.taskOperations {
+  display: flex;
+  align-items: center;
+}
+
+.taskListInformationContainer {
+  gap: 1rem;
+
+}
+
+.taskListContainer {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.taskListInformationContainer input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #3a3a45;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.taskListInformationContainer input[type="checkbox"]:checked {
+  background-color: #34d399;
+  border-color: #34d399;
+}
+
+.taskListInformationContainer input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: #16161a;
+  font-size: 14px;
+  font-weight: 900;
+  left: 4px;
+  top: -1px;
+}
+
+.taskListInformationContainer .taskInformation .task-title {
+  color: #f0eff5;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+/* task complete  text dull */
+input[type="checkbox"]:checked+.task-link-wrapper .task-title {
+  text-decoration: line-through;
+  color: #4e4d5e;
+}
+
+.task-informations {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+}
+
+.task-informations> :first-child,
+.task-informations> :nth-child(2) {
+  font-weight: bold;
+}
+
+.task-informations span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.task-informations .task-deadline {
+  border: 1px solid #2a2a35;
+  padding: 0.3rem 0.4rem 0.3rem 0.9rem;
+  color: #8b8a9b;
+
+  background-color: #16161a;
+}
+
+.task-informations .task-category {
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
+.work-theme.task-category {
+  background: rgba(96, 165, 250, 0.12);
+  color: #60a5fa;
+}
+
+.personal-theme.task-category {
+  background: rgba(192, 132, 252, 0.12);
+  color: #c084fc;
+}
+
+.study-theme.task-category {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399;
+}
+
+.health-theme.task-category {
+  background: rgba(251, 146, 60, 0.12);
+  color: #fb923c;
+}
+
+.shopping-theme.task-category {
+  background: rgba(244, 114, 182, 0.12);
+  color: #f472b6;
+}
+
+.home-theme.task-category {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+}
+
+.finance-theme.task-category {
+  background: rgba(163, 230, 53, 0.12);
+  color: #a3e635;
+}
+
+.other-theme.task-category {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+}
+
+.all-theme.task-category {
+  background: rgba(240, 239, 245, 0.12);
+  color: #f0eff5;
+}
+
+.default-theme.task-category {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+}
+
+.task-informations .task-priority {
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+}
+
+.low-priority.task-priority {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid #34d399;
+}
+
+.medium-priority.task-priority {
+  color: #fb923c;
+  background-color: rgba(251, 146, 60, 0.12);
+  border: 1px solid #fb923c;
+}
+
+.high-priority.task-priority {
+  color: #f87171;
+  background-color: rgba(248, 113, 113, 0.12);
+  border: 1px solid #f87171;
+}
+
+.taskOperations {
+  gap: 1.5rem;
+
+}
+
+.taskOperations button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskOperations button:first-child:hover {
+  background: rgba(250, 204, 21, 0.1);
+}
+
+/* Gold tint for Star */
+.taskOperations button:last-child {
+  color: #4e4d5e;
+}
+
+.taskOperations button:last-child:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.task-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+  display: block;
+}
+
+.task-link-wrapper:hover .task-title {
+  color: #7c6af7;
+  text-decoration: underline;
+}

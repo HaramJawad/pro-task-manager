@@ -1,0 +1,11 @@
+.greeting-container 
+{
+    display:flex;
+    align-items: center;
+        gap:0.5rem;
+}
+.greetingText 
+{
+    color: #7c6af7;
+    font-size: 1rem;
+}

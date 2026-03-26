@@ -1,0 +1,40 @@
+.newTaskContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0rem 2.2rem 0rem;
+    border-bottom: 1px solid #2a2a35;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.newTaskContainer .heading h1 {
+    color: #f0eff5;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+}
+
+.newTaskContainer .heading span {
+    color: #8b8a9b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.newTaskContainer .button button {
+    background: linear-gradient(135deg, #7c6af7 0%, #6350e0 100%);
+    padding: 0.7rem 1.4rem;
+    color: #f0eff5;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(124, 106, 247, 0.2);
+}
+
+.newTaskContainer .button button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 106, 247, 0.3);
+}

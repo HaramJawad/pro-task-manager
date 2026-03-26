@@ -1,0 +1,36 @@
+
+.noTasksMessage  
+{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  gap:1rem;
+  margin:6rem auto;
+  opacity:0.6
+}
+.noTasksMessage span 
+{
+  font-size: 3rem;
+  color: #7c6af7;
+}
+ .noTasksMessage p 
+{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #8b8a9b;
+  letter-spacing: 0.5px;
+}
+.show-tasks-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .noTasksMessage{
+max-width: 400px;
+  }
+}

@@ -1,0 +1,47 @@
+.taskSearchFilter {
+    margin: 1.3rem 0rem 0.7rem 0rem;
+    width: 100%;
+}
+
+.taskSearchFilter .buttons {
+    display: flex;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+
+.taskSearchFilter .buttons button {
+    flex: 1;
+    border: none;
+    background: #16161a;
+    border: 1px solid #2a2a35;
+    color: #8b8a9b;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.taskSearchFilter .buttons button.active {
+    background: #2a2a35;
+    color: #f0eff5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.taskSearchFilter input {
+    border: 1px solid #2a2a35;
+    background-color: #16161a;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 1rem;
+    color: #f0eff5;
+    font-size: 0.8rem;
+    transition: border-color 0.2s;
+}
+.taskSearchFilter input:focus 
+{
+    outline: none;
+  border-color: #7c6af7;
+  background: #1e1e24;
+}
