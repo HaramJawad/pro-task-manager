@@ -1,29 +1,55 @@
+/* Header Base Styles */
 header {
     background-color: #16161a;
     width: 100%;
-    height: auto;
     color: #8b8a9b;
-    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #2a2a35;
+    transition: all 0.3s ease;
 }
 
-/* ── Logo row-------- */
+header nav {
+    padding: 0.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Logo Section */
 .logo-section {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.logo-brand {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-.logo-container img {
-    width: 36px;
-    height: 36px;
-    display: block;
+/* New Logo Mark - Same as Footer Style */
+.logo-mark {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #7c6af7, #a78bfa);
     border-radius: 10px;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(124, 106, 247, 0.3);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.logo-mark:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(124, 106, 247, 0.4);
 }
 
 .app-name-container h3 {
@@ -32,26 +58,32 @@ header {
     font-weight: 800;
     letter-spacing: -0.3px;
     margin: 0;
+    line-height: 1.2;
 }
 
 .app-name-container p {
     color: #4e4d5e;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 500;
     margin: 2px 0 0 0;
 }
 
+/* Hamburger Button */
 .hamburger {
     background: none;
     border: none;
     color: #8b8a9b;
     font-size: 1.4rem;
     cursor: pointer;
-    margin-left: auto;
-    padding: 0.3rem 0.5rem;
+    padding: 0.4rem 0.6rem;
     border-radius: 8px;
-    transition: background 0.15s, color 0.15s;
+    transition: all 0.2s ease;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
 }
 
 .hamburger:hover {
@@ -59,16 +91,34 @@ header {
     color: #a78bfa;
 }
 
+.hamburger:active {
+    transform: scale(0.95);
+}
+
+/* Navigation Menu */
 .pages-list-ul {
     display: none;
-    padding: 0.5rem 0 0.5rem 0;
-    margin: 0;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    list-style: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .pages-list-ul.show {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0.25rem;
     width: 100%;
 }
 
@@ -77,17 +127,17 @@ header {
     color: #8b8a9b;
     display: flex;
     align-items: center;
-    padding: 0.6rem 0.75rem;
-    gap: 0.65rem;
+    padding: 0.7rem 0.8rem;
+    gap: 0.75rem;
     border-radius: 10px;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 .pages-list-ul li a span {
-    font-size: 0.95rem;
-    width: 20px;
+    font-size: 1rem;
+    width: 24px;
     text-align: center;
     display: inline-block;
     flex-shrink: 0;
@@ -96,6 +146,7 @@ header {
 .pages-list-ul li a:hover {
     background-color: rgba(124, 106, 247, 0.08);
     color: #c4c3d0;
+    transform: translateX(3px);
 }
 
 .pages-list-ul li a.active {
@@ -104,93 +155,234 @@ header {
     font-weight: 600;
 }
 
-/* ── User card at bottom ── */
+/* Sidebar Footer - User Card */
 .sidebar-footer {
     border-top: 1px solid #2a2a35;
-    padding-top: 1rem;
-    margin-top: auto;
+    padding-top: 0.8rem;
+    margin-top: 0.5rem;
 }
 
 .user-card {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 10px;
+    gap: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.user-card:hover {
+    background: rgba(124, 106, 247, 0.05);
 }
 
 .user-avatar {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #7c6af7, #a78bfa);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #fff;
     flex-shrink: 0;
 }
 
+.user-info {
+    flex: 1;
+}
+
 .user-info .user-name {
     color: #f0eff5;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     margin: 0;
 }
 
 .user-info .user-role {
     color: #4e4d5e;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    margin: 1px 0 0;
+    margin: 2px 0 0;
 }
 
 .online-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #34d399;
-    margin-left: auto;
     flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
 }
 
-/* --- DESKTOP --- */
+/* Small Phones (below 400px) */
+@media (max-width: 400px) {
+    header nav {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .logo-mark {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .app-name-container h3 {
+        font-size: 0.9rem;
+    }
+    
+    .app-name-container p {
+        font-size: 0.6rem;
+    }
+    
+    .pages-list-ul li a {
+        padding: 0.6rem 0.7rem;
+        font-size: 0.85rem;
+    }
+    
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .user-info .user-name {
+        font-size: 0.8rem;
+    }
+    
+    .user-info .user-role {
+        font-size: 0.65rem;
+    }
+}
+
+/* Tablets (401px - 767px) */
+@media (min-width: 401px) and (max-width: 767px) {
+    header nav {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .logo-mark {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+    
+    .pages-list-ul li a {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Desktop (768px and above) */
 @media (min-width: 768px) {
     header {
         position: fixed;
         left: 0;
         top: 0;
-        width: 240px;
+        width: 260px;
         height: 100vh;
-        padding: 1.5rem 1rem;
-        border-right: 1px solid #2a2a35;
         border-bottom: none;
+        border-right: 1px solid #2a2a35;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    header nav {
+        padding: 1.5rem 1rem;
+        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        overflow-y: auto;
     }
-
+    
     .hamburger {
         display: none;
     }
-
+    
     .logo-section {
-        padding: 0 0.5rem;
+        justify-content: flex-start;
     }
-
+    
+    .logo-mark {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+    
+    .app-name-container h3 {
+        font-size: 1.1rem;
+    }
+    
+    .app-name-container p {
+        font-size: 0.7rem;
+    }
+    
     .pages-list-ul {
         display: flex !important;
-        /* Always show links on desktop */
         flex-direction: column;
-        gap: 2px;
+        gap: 0.25rem;
         flex: 1;
+        margin: 0;
+        animation: none;
     }
-
+    
+    .pages-list-ul li a {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
     .sidebar-footer {
-        display: flex;
-        flex-direction: column;
+        margin-top: auto;
+        padding-top: 1rem;
+    }
+    
+    .user-card {
+        padding: 0.5rem 0.6rem;
+    }
+    
+    .user-avatar {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    header {
+        width: 280px;
+    }
+    .logo-mark {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+    
+    .app-name-container h3 {
+        font-size: 1.2rem;
+    }
+    
+    .pages-list-ul li a {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Scrollbar Styling for Desktop Sidebar */
+@media (min-width: 768px) {
+    header::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    header::-webkit-scrollbar-track {
+        background: #0e0e11;
+    }
+    
+    header::-webkit-scrollbar-thumb {
+        background: #2a2a35;
+        border-radius: 10px;
+    }
+    
+    header::-webkit-scrollbar-thumb:hover {
+        background: #7c6af7;
     }
 }

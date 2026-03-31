@@ -1,4 +1,14 @@
-.current-date-text 
-{
-    color:#8b8a9b;
+
+
+.current-date-text {
+    color: #8b8a9b;
+    font-size: 0.7rem;
+    display: block;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .current-date-text {
+        font-size: 0.8rem;
+    }
 }

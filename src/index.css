@@ -15,5 +15,16 @@ ul {
 body  
 {
     background-color: #0e0e11;
-    cursor: none;
+}
+/* Better touch targets on mobile */
+button, 
+input[type="checkbox"],
+.taskOperations button {
+    min-height: 40px;
+}
+
+@media (max-width: 480px) {
+    button {
+        min-height: 40px;
+    }
 }

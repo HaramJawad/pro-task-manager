@@ -1,23 +1,22 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 function Header() {
   const [isOpen, setIsOpen] = useState(false); // Track menu state
-
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <header>
       <nav>
         <div className="logo-section">
-          <div className="logo-container">
-            <img src="src/assets/logo.jpeg" alt="TaskFlow" />
-          </div>
-          <div className="app-name-container">
-            <h3>TaskFlow</h3>
-            <p>Stay organised</p>
+          <div className="logo-brand">
+            <div className="logo-mark">⚡</div>
+            <div className="app-name-container">
+              <h3>TaskFlow</h3>
+              <p>Stay organised</p>
+            </div>
           </div>
           {/* Hamburger Button - Only visible on mobile */}
-          <button className="hamburger" onClick={toggleMenu}>
+          <button className="hamburger" onClick={toggleMenu} aria-label="Menu">
             {isOpen ? "✕" : "☰"}
           </button>
         </div>

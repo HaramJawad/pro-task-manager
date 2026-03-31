@@ -1,40 +1,69 @@
+
 .newTaskContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0rem 2.2rem 0rem;
+    padding: 0.5rem 0rem 1.5rem 0rem;
     border-bottom: 1px solid #2a2a35;
     flex-wrap: wrap;
-    gap:1rem;
+    gap: 1rem;
 }
 
 .newTaskContainer .heading h1 {
     color: #f0eff5;
     font-weight: 800;
-    margin-bottom: 0.5rem;
-    font-size: 2.2rem;
-    letter-spacing: -1px;
+    margin-bottom: 0.25rem;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
 }
 
 .newTaskContainer .heading span {
     color: #8b8a9b;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 500;
 }
 
 .newTaskContainer .button button {
     background: linear-gradient(135deg, #7c6af7 0%, #6350e0 100%);
-    padding: 0.7rem 1.4rem;
+    padding: 0.55rem 1.2rem;
     color: #f0eff5;
     font-weight: 600;
+    font-size: 0.85rem;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 15px rgba(124, 106, 247, 0.2);
+    white-space: nowrap;
 }
 
 .newTaskContainer .button button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(124, 106, 247, 0.3);
+}
+
+/* Tablet and up */
+@media (min-width: 480px) {
+    .newTaskContainer .heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .newTaskContainer .heading span {
+        font-size: 0.85rem;
+    }
+
+    .newTaskContainer .button button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .newTaskContainer {
+        padding: 1rem 0rem 2.2rem 0rem;
+    }
+
+    .newTaskContainer .heading h1 {
+        font-size: 2.2rem;
+    }
 }

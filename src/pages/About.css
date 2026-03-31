@@ -1,162 +1,490 @@
 
-
+/* About Page Container */
 .about-page {
     color: #f0eff5;
-    padding: 40px 20px;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-   width: 100%;
-   display: flex;
-   justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    animation: fadeIn 0.4s ease-out;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
 .about-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-    margin-bottom: 40px;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
 }
 
 .about-header .logo-mark {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background: linear-gradient(135deg, #7c6af7, #a78bfa);
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    box-shadow: 0 10px 20px rgba(124, 106, 247, 0.2);
+    font-size: 1.5rem;
+    box-shadow: 0 10px 20px rgba(124, 106, 247, 0.25);
+    transition: all 0.3s ease;
+    animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.about-header .logo-mark:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(124, 106, 247, 0.35);
 }
 
 .about-header h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     margin: 0;
+    background: linear-gradient(135deg, #f0eff5, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .about-header .about-subtext {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 600px;
+    color: #8b8a9b;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 /* Responsive Grid Layout */
 .about-grid {
-   display:grid;
-   grid-template-columns:repeat(1,1fr);
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 1rem 0;
 }
 
 /* Card Styling */
 .about-card {
     background: #16161a;
     border: 1px solid #2a2a35;
-    border-radius: 24px;
-    padding: 30px;
-    transition: all 0.3s ease;
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-card:hover {
-    border-color: #3f3f4e;
-    transform: translateY(-5px);
+    border-color: #7c6af7;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(124, 106, 247, 0.1);
 }
 
 .about-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 1.2rem;
     color: #f0eff5;
     border-bottom: 1px solid #2a2a35;
-    padding-bottom: 12px;
+    padding-bottom: 0.7rem;
+    display: inline-block;
+    width: auto;
 }
 
 /* Features List */
 .features-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .features-list li {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 18px;
-    font-size: 0.95rem;
+    gap: 0.8rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
     color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+.features-list li:hover {
+    transform: translateX(5px);
+    color: #f0eff5;
 }
 
 .icon-box {
-    width: 32px;
-    height: 32px;
-    background: rgba(124, 106, 247, 0.15);
+    width: 28px;
+    height: 28px;
+    background: rgba(124, 106, 247, 0.12);
     color: #a78bfa;
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.features-list li:hover .icon-box {
+    background: rgba(124, 106, 247, 0.25);
+    transform: scale(1.05);
 }
 
 /* Tech Stack Badges */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 0.7rem;
 }
 
 .tech-badge {
     background: rgba(255, 255, 255, 0.03);
     color: #f0eff5;
     border: 1px solid #2a2a35;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+    cursor: default;
 }
 
 .tech-badge:hover {
-    background: rgba(124, 106, 247, 0.1);
+    background: rgba(124, 106, 247, 0.12);
     border-color: #7c6af7;
     color: #a78bfa;
+    transform: translateY(-2px);
 }
 
+/* About Footer */
 .about-footer {
-    margin-top: auto;
-    padding-top: 60px;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
     text-align: center;
     color: #64748b;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    border-top: 1px solid #2a2a35;
 }
 
-/* --- DESKTOP VIEW (768px+) --- */
-@media (min-width: 768px) {
-    .about-grid {
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about-header h1 {
-        font-size: 3.5rem;
-    }
-
+/* Very Small Phones (below 350px) */
+@media (max-width: 350px) {
     .about-page {
-        padding: 60px 50px;
-        max-width: 1000px;
+        padding: 1rem 0.8rem;
+    }
+    
+    .about-header .logo-mark {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .about-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 0.75rem;
+        max-width: 100%;
+    }
+    
+    .about-card {
+        padding: 1rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .features-list li {
+        font-size: 0.75rem;
+        gap: 0.6rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .icon-box {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+    
+    .tech-badge {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.65rem;
+    }
+}
+
+/* Small Phones (351px - 480px) */
+@media (min-width: 351px) and (max-width: 480px) {
+    .about-page {
+        padding: 1.2rem 1rem;
+    }
+    
+    .about-header {
+        gap: 0.7rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-header .logo-mark {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 0.8rem;
+        max-width: 95%;
+    }
+    
+    .about-card {
+        padding: 1.2rem;
+    }
+    
+    .features-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.68rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Medium Phones (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .about-page {
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .about-header .logo-mark {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 0.85rem;
+        max-width: 85%;
+    }
+    
+    .about-card {
+        padding: 1.4rem;
+    }
+    
+    .features-list li {
+        font-size: 0.85rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.72rem;
+        padding: 0.45rem 0.9rem;
+    }
+}
+
+/* Tablets (601px - 767px) */
+@media (min-width: 601px) and (max-width: 767px) {
+    .about-page {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
         margin: 0 auto;
     }
+    
+    .about-header .logo-mark {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 0.9rem;
+        max-width: 80%;
+    }
+    
+    .about-grid {
+        gap: 1.5rem;
+    }
+    
+    .about-card {
+        padding: 1.5rem;
+    }
+    
+    .features-list li {
+        font-size: 0.9rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
 }
-@media (max-width:400px) 
-{
-.features-list li
-{
-flex-direction: column;
-justify-content: center;
+
+/* Desktop (768px and above) */
+@media (min-width: 768px) {
+    .about-page {
+        padding: 2.5rem 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        min-height: auto;
+    }
+    
+    .about-header {
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .about-header .logo-mark {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 1rem;
+        max-width: 600px;
+    }
+    
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+        margin: 1.5rem 0;
+    }
+    
+    .about-card {
+        padding: 1.8rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .features-list li {
+        font-size: 0.9rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .icon-box {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+    
+    .tech-stack {
+        gap: 0.8rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.8rem;
+        padding: 0.55rem 1.1rem;
+    }
+    
+    .about-footer {
+        margin-top: 2.5rem;
+        padding-top: 1.8rem;
+        font-size: 0.8rem;
+    }
 }
+
+/* Large Desktop (1024px and above) */
+@media (min-width: 1024px) {
+    .about-page {
+        max-width: 1100px;
+    }
+    
+    .about-header .logo-mark {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+    
+    .about-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 1.05rem;
+    }
+    
+    .about-grid {
+        gap: 2rem;
+    }
+    
+    .about-card {
+        padding: 2rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+    .about-page {
+        max-width: 1200px;
+        padding: 3.5rem 2rem;
+    }
+    
+    .about-header .logo-mark {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+    }
+    
+    .about-header h1 {
+        font-size: 3rem;
+    }
+    
+    .about-header .about-subtext {
+        font-size: 1.1rem;
+    }
 }

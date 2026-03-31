@@ -1,36 +1,61 @@
 
-.noTasksMessage  
-{
-  display:flex;
+.noTasksMessage {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
-  gap:1rem;
-  margin:6rem auto;
-  opacity:0.6
+  width: 100%;
+  gap: 0.8rem;
+  margin: 4rem auto;
+  opacity: 0.6;
+  padding: 0 16px;
 }
-.noTasksMessage span 
-{
-  font-size: 3rem;
+
+.noTasksMessage span {
+  font-size: 2.5rem;
   color: #7c6af7;
 }
- .noTasksMessage p 
-{
-  font-size: 1.3rem;
+
+
+.noTasksMessage p {
+  font-size: 1rem;
   font-weight: 500;
   color: #8b8a9b;
   letter-spacing: 0.5px;
+  text-align: center;
 }
+
 .show-tasks-ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 1.5rem 0;
+  margin: 1.2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 480px) {
+  .noTasksMessage {
+      margin: 5rem auto;
+      gap: 1rem;
+  }
+  
+  .noTasksMessage span {
+      font-size: 3rem;
+  }
+  
+  .noTasksMessage p {
+      font-size: 1.15rem;
+  }
 }
 
 @media (min-width: 768px) {
-  .noTasksMessage{
-max-width: 400px;
+  .noTasksMessage {
+      max-width: 400px;
+      margin: 6rem auto;
+  }
+  
+  .noTasksMessage p {
+      font-size: 1.3rem;
   }
 }

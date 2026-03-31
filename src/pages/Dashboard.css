@@ -1,151 +1,154 @@
+
+    /* Dashboard Container */
 .dashboard-container {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-   padding:20px;
-   animation: fadeIn 0.5s ease-in-out;
+    gap: 1rem;
+    padding: 16px;
+    animation: fadeIn 0.5s ease-in-out;
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Main Heading */
 .dashboard-container .main-heading {
     color: #f0eff5;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: -0.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: -0.25rem;
 }
 
+/* Backlog Grid - Mobile First */
 .backlog {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on mobile */
-    gap: 1rem;
+    gap: 0.8rem;
     width: 100%;
-    flex-shrink: 0;
 }
 
 .backlogChild {
     background-color: #16161a;
     border: 1px solid #2a2a35;
-    padding: 1.25rem;
-    border-radius: 1.25rem;
+    padding: 1rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .backlogChild:hover {
     border-color: #3a3a45;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(124, 106, 247, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(124, 106, 247, 0.1);
 }
 
 /* Label text */
 .backlog-text {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     color: #8b8a9b;
 }
 
 .backlog-emoji {
-    font-size: 1rem;
+    font-size: 0.9rem;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    /* flex-shrink: 0; */
+    width: 32px;
+    height: 32px;
 }
 
 /* Big number */
 .backlogChild h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     line-height: 1;
 }
 
+/* Emoji & Number Colors */
 .totalTask-emoji {
     color: #7c6af7;
     background-color: rgba(124, 106, 247, 0.15);
 }
-
 .totalTask-count {
     color: #7c6af7;
 }
-
 .completed-emoji {
     color: #34d399;
-    background: rgba(52, 211, 153, 0.12)
+    background: rgba(52, 211, 153, 0.12);
 }
-
 .completedTask-count {
     color: #34d399;
 }
-
 .pending-emoji {
     color: #fb923c;
     background-color: rgba(251, 146, 60, 0.12);
 }
-
 .pendingTask-count {
     color: #fb923c;
 }
-
 .important-emoji {
     color: #f87171;
-    background-color:   rgba(248, 113, 113, 0.12);
+    background-color: rgba(248, 113, 113, 0.12);
 }
-
 .importantTask-count {
     color: #f87171;
 }
 
+/* Dashboard Grid */
 .dashboard-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.8rem;
     width: 100%;
 }
 
+/* Cards */
 .card {
     background-color: #16161a;
     border: 1px solid #2a2a35;
-    border-radius: 1.25rem;
-    padding: 1.5rem;
+    border-radius: 1rem;
+    padding: 1.2rem;
     color: #f0eff5;
     transition: border-color 0.3s ease;
 }
 
 .card .heading {
-    font-size:1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: #f0eff5;
-    margin: 0 0 1.2rem;
+    margin: 0 0 1rem 0;
 }
 
+/* Overall Progress Card */
 .overall-progress {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+    text-align: center;
 }
 
 .overall-progress .heading {
     font-size: 0.9rem;
-    color: #f0eff5;
+    margin-bottom: 0.5rem;
 }
 
 .overall-progress .completed {
     color: #34d399;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
@@ -154,29 +157,38 @@
     font-weight: 400;
 }
 
+/* Recent Tasks Section */
 .recent-tasks .heading-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-
 .recent-tasks .heading-section .button {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #7c6af7;
-    /* cursor: pointer; */
     font-weight: 600;
+    transition: color 0.2s;
 }
 
 .recent-tasks .heading-section .button:hover {
     color: #a78bfa;
 }
 
+.noRecentTask {
+    color: #8b8a9b;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+
 .recentTasksContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -185,9 +197,9 @@
 .recentTaskList {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    padding: 0.55rem 0.65rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
     background-color: transparent;
     border-radius: 8px;
     transition: all 0.2s ease;
@@ -196,13 +208,13 @@
 
 .recentTaskList:hover {
     background-color: #1e1e24;
-    border-color:#2a2a35;
-    padding-left: 1rem;
+    border-color: #2a2a35;
+    transform: translateX(3px);
 }
 
 .recentTaskList .title {
     flex: 1;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     margin: 0;
     color: #f0eff5;
@@ -212,28 +224,27 @@
 }
 
 .recentTaskList .category {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 20px;
-    /* flex-shrink: 0; */
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
 }
 
+/* Bullet Points */
 .recentTaskList::before {
     content: "•";
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 0;
     flex-shrink: 0;
     display: inline-block;
-    margin-top: 2px;
 }
 
 .completed-bullet::before {
     color: #34d399;
 }
-
 .completed-bullet .title {
     text-decoration: line-through;
     color: #4e4d5e;
@@ -242,64 +253,211 @@
     color: #fb923c;
 }
 
-.work-theme     .category { background: rgba(96,165,250,0.12);   color: #60a5fa; }
-.personal-theme .category { background: rgba(192,132,252,0.12);  color: #c084fc; }
-.study-theme    .category { background: rgba(52,211,153,0.12);   color: #34d399; }
-.health-theme   .category { background: rgba(251,146,60,0.12);   color: #fb923c; }
-.shopping-theme .category { background: rgba(244,114,182,0.12);  color: #f472b6; }
-.home-theme     .category { background: rgba(34,211,238,0.12);   color: #22d3ee; }
-.finance-theme  .category { background: rgba(163,230,53,0.12);   color: #a3e635; }
-.other-theme    .category { background: rgba(148,163,184,0.12);  color: #94a3b8; }
-.all-theme      .category { background: rgba(240,239,245,0.12);  color: #f0eff5; }
-.default-theme  .category { background: rgba(148,163,184,0.12);  color: #94a3b8; }
+/* Category Themes for Dashboard */
+.work-theme .category { background: rgba(96, 165, 250, 0.12); color: #60a5fa; }
+.personal-theme .category { background: rgba(192, 132, 252, 0.12); color: #c084fc; }
+.study-theme .category { background: rgba(52, 211, 153, 0.12); color: #34d399; }
+.health-theme .category { background: rgba(251, 146, 60, 0.12); color: #fb923c; }
+.shopping-theme .category { background: rgba(244, 114, 182, 0.12); color: #f472b6; }
+.home-theme .category { background: rgba(34, 211, 238, 0.12); color: #22d3ee; }
+.finance-theme .category { background: rgba(163, 230, 53, 0.12); color: #a3e635; }
+.other-theme .category { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
+.all-theme .category { background: rgba(240, 239, 245, 0.12); color: #f0eff5; }
+.default-theme .category { background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
 
-/* task-link resets */
+/* Task Link Reset */
 a.task-link {
     text-decoration: none;
     color: inherit;
     display: block;
 }
-/* Scrollbar styling */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 10px; }
-@media (min-width: 912px) {
-    .dashboard-container 
-    {
-        max-width: 1000px;
-        max-width: 1100px; 
-        width: 100%;
-        /* padding:20px 50px; */
-        padding: 40px 60px;
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #0e0e11;
+}
+::-webkit-scrollbar-thumb {
+    background: #2a2a35;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #7c6af7;
+}
+
+
+
+/* Small phones (below 400px) */
+@media (max-width: 400px) {
+    .dashboard-container {
+        padding: 12px;
+        gap: 0.8rem;
+    }
+    
+    .backlog {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.6rem;
+    }
+    
+    .backlogChild {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
+    }
+    
+    .backlogChild h1 {
+        font-size: 1.5rem;
+        order: 2;
+    }
+    
+    .backlog-text {
+        order: 3;
+        font-size: 0.55rem;
+    }
+    
+    .backlog-emoji {
+        order: 1;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+    
+    .dashboard-container .main-heading {
+        font-size: 1.3rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .recent-tasks .heading-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Medium phones (401px - 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+    .backlog {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+    }
+    
+    .backlogChild {
+        padding: 0.9rem;
+    }
+    
+    .backlogChild h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets (601px - 911px) */
+@media (min-width: 601px) and (max-width: 911px) {
+    .dashboard-container {
+        padding: 20px;
+        max-width: 700px;
         margin: 0 auto;
     }
+    
     .backlog {
-        grid-template-columns: repeat(4, 1fr); /* 4 equal columns on desktop */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
     }
-
+    
+    .backlogChild {
+        padding: 1rem;
+    }
+    
+    .backlogChild h1 {
+        font-size: 1.7rem;
+    }
+    
     .dashboard-grid {
         display: grid;
-        grid-template-columns: 200px 1fr; /* narrow progress, wide recent */
-        grid-template-rows: auto auto;
-        gap: 1rem;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 0.8rem;
     }
-
-    /* Priority breakdown spans full width */
+    
     .priority-breakdown {
         grid-column: 1 / 3;
     }
 }
-@media (max-width: 400px) {
-    .backlog 
+@media (min-width:768px)
+{
+    .dashboard-container  
     {
-        grid-template-columns: repeat(1, 1fr);
+        max-width: 1100px;
+        padding: 32px 40px;
     }
-    .backlogChild 
-    {
-        justify-content:center;
-        align-items: center;
+}
+
+/* Desktop (912px and above) */
+@media (min-width: 912px) {
+    .dashboard-container {
+        margin: 0 auto;
+        gap: 1.2rem;
     }
-    .recent-tasks .heading-section
-    {
-        flex-direction: column;
+    
+    .dashboard-container .main-heading {
+        font-size: 1.75rem;
     }
+    
+    .backlog {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
     }
+    
+    .backlogChild {
+        padding: 1.25rem;
+    }
+    
+    .backlogChild h1 {
+        font-size: 2rem;
+    }
+    
+    .backlog-text {
+        font-size: 0.65rem;
+    }
+    
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 1rem;
+    }
+    
+    .priority-breakdown {
+        grid-column: 1 / 3;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .recentTaskList .title {
+        font-size: 0.8rem;
+    }
+    
+    .recentTaskList .category {
+        font-size: 0.65rem;
+    }
+}
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+    .dashboard-container {
+        max-width: 1300px;
+        padding: 40px 60px;
+    }
+    
+    .backlogChild h1 {
+        font-size: 2.2rem;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 320px 1fr;
+    }
+}

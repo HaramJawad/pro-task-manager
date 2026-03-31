@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Layout from "./layout/Layout.jsx"
-import CustomCursor from "./components/CustomCursor"
 import Dashboard from "./pages/Dashboard"
 import Tasks from "./pages/Tasks"
 import Important from "./pages/Important"
@@ -14,7 +13,6 @@ function App() {
 
   return (
     <>
-       <CustomCursor/>
       <div className="main-content">
         {/* Routes */}
         <Routes>

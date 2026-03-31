@@ -1,13 +1,16 @@
+
 .show-task-list {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #16161a;
   border: 1px solid #2a2a35;
-  padding: 1rem;
-  border-radius: 1rem
+  padding: 0.9rem;
+  border-radius: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .show-task-list:hover {
-  transform: translateX(5px);
+  transform: translateX(3px);
   border-color: #7c6af7;
   background-color: #1c1c21;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -18,30 +21,37 @@
 .task-informations,
 .taskOperations {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .taskListInformationContainer {
-  gap: 1rem;
-
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 0; 
 }
 
 .taskListContainer {
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
 .taskListInformationContainer input[type="checkbox"] {
   appearance: none;
-  width: 22px;
-  height: 22px;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;  /* Prevents shrinking */
+  min-height: 20px; /* Prevents shrinking */
   border: 2px solid #3a3a45;
   border-radius: 6px;
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease;
-  margin-top: 4px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .taskListInformationContainer input[type="checkbox"]:checked {
@@ -53,56 +63,56 @@
   content: "✓";
   position: absolute;
   color: #16161a;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
-  left: 4px;
-  top: -1px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+}
+
+.taskListInformationContainer .taskInformation {
+  flex: 1;
+  min-width: 0;
 }
 
 .taskListInformationContainer .taskInformation .task-title {
   color: #f0eff5;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
   font-weight: 600;
   transition: color 0.2s;
-}
-
-/* task complete  text dull */
-input[type="checkbox"]:checked+.task-link-wrapper .task-title {
-  text-decoration: line-through;
-  color: #4e4d5e;
+  word-break: break-word;
 }
 
 .task-informations {
-  gap: 0.5rem;
+  gap: 0.4rem;
   flex-wrap: wrap;
-
-}
-
-.task-informations> :first-child,
-.task-informations> :nth-child(2) {
-  font-weight: bold;
+  align-items: center;
 }
 
 .task-informations span {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 3px 8px;
 }
 
 .task-informations .task-deadline {
   border: 1px solid #2a2a35;
-  padding: 0.3rem 0.4rem 0.3rem 0.9rem;
+  padding: 3px 10px;
   color: #8b8a9b;
-
   background-color: #16161a;
+  font-size: 0.65rem;
 }
 
-.task-informations .task-category {
-  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+/* Checkbox checked styling */
+.taskListInformationContainer:has(input[type="checkbox"]:checked) .taskInformation .task-title {
+  text-decoration: line-through;
+  color: #4e4d5e;
 }
 
+/* Category Themes */
 .work-theme.task-category {
   background: rgba(96, 165, 250, 0.12);
   color: #60a5fa;
@@ -143,20 +153,12 @@ input[type="checkbox"]:checked+.task-link-wrapper .task-title {
   color: #94a3b8;
 }
 
-.all-theme.task-category {
-  background: rgba(240, 239, 245, 0.12);
-  color: #f0eff5;
-}
-
 .default-theme.task-category {
   background: rgba(148, 163, 184, 0.12);
   color: #94a3b8;
 }
 
-.task-informations .task-priority {
-  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-}
-
+/* Priority Styles */
 .low-priority.task-priority {
   color: #34d399;
   background: rgba(52, 211, 153, 0.12);
@@ -176,27 +178,27 @@ input[type="checkbox"]:checked+.task-link-wrapper .task-title {
 }
 
 .taskOperations {
-  gap: 1.5rem;
-
+  gap: 0.6rem;
+  flex-shrink: 0;
 }
 
 .taskOperations button {
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 6px;
   border-radius: 8px;
   transition: background 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
 }
 
 .taskOperations button:first-child:hover {
   background: rgba(250, 204, 21, 0.1);
 }
 
-/* Gold tint for Star */
 .taskOperations button:last-child {
   color: #4e4d5e;
 }
@@ -216,4 +218,94 @@ input[type="checkbox"]:checked+.task-link-wrapper .task-title {
 .task-link-wrapper:hover .task-title {
   color: #7c6af7;
   text-decoration: underline;
+}
+
+
+/* Medium screens: slightly smaller text */
+@media (max-width: 480px) {
+  .taskListInformationContainer .taskInformation .task-title {
+      font-size: 0.9rem;
+  }
+  
+  .task-informations span {
+      font-size: 0.6rem;
+      padding: 2px 6px;
+  }
+  
+  .task-informations .task-deadline {
+      font-size: 0.6rem;
+      padding: 2px 8px;
+  }
+}
+
+/* Small screens (below 400px) - reduce gap  */
+@media (max-width: 400px) {
+  .show-task-list {
+      padding: 0.75rem;
+  }
+  
+  .taskListInformationContainer {
+      gap: 0.6rem;
+  }
+  
+  .task-informations {
+      gap: 0.3rem;
+  }
+  
+  .task-informations span {
+      font-size: 0.55rem;
+      padding: 2px 5px;
+  }
+  
+  .task-informations .task-deadline {
+      font-size: 0.55rem;
+      padding: 2px 6px;
+  }
+  
+  .taskOperations {
+      gap: 0.4rem;
+  }
+  
+  .taskOperations button {
+      padding: 4px;
+      font-size: 0.9rem;
+  }
+}
+
+/* Very small screens (below 340px) - stack layout */
+@media (max-width: 340px) {
+  .taskListContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+  }
+  
+  .taskOperations {
+      align-self: flex-end;
+      margin-top: -28px;
+  }
+  
+  .task-informations {
+      flex-wrap: wrap;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .show-task-list {
+      padding: 1rem;
+  }
+  
+  .show-task-list:hover {
+      transform: translateX(5px);
+  }
+  
+  .taskListInformationContainer .taskInformation .task-title {
+      font-size: 1rem;
+  }
+  
+  .task-informations span {
+      font-size: 0.7rem;
+      padding: 4px 8px;
+  }
 }
